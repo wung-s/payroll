@@ -26,7 +26,8 @@ func App() *buffalo.App {
 			Env:          ENV,
 			SessionStore: sessions.Null{},
 			PreWares: []buffalo.PreWare{
-				cors.Default().Handler,
+				// cors.Default().Handler,
+				cors.AllowAll().Handler,
 			},
 			SessionName: "_payroll_session",
 		})
@@ -50,6 +51,9 @@ func App() *buffalo.App {
 
 		app.GET("/", HomeHandler)
 
+		app.GET("/groups", GroupsList)
+		app.POST("/records/upload", RecordsUpload)
+		app.GET("/records", RecordsList)
 	}
 
 	return app
