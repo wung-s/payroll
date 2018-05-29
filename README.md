@@ -22,6 +22,8 @@ File content guarantees:
 1.  There will always be a well-formed header line.
 1.  There will always be a well-formed footer line.
 
+### Important:
+
 Example input files named `sample.csv` and `sample2.csv` are included in this repo.
 
 ### What the web-based application does:
@@ -156,7 +158,7 @@ should produce the following payroll report:
 
     $ mkdir -p $GOPATH/src/github.com/wung-s
     $ cd $GOPATH/src/github.com/wung-s
-    $ git clone git@github.com:wung-s/payroller-api.git payroll && payroll
+    $ git clone git@github.com:wung-s/payroll.git && cd payroll
     $ buffalo db create -a
     $ buffalo db migrate
     $ buffalo task db:seed
@@ -174,9 +176,5 @@ should produce the following payroll report:
 * Only one partner
 * No authentication
 * Date in the `csv` are always in the format `DD/MM/YYYY`
-
-### Important:
-
-A sample `csv` file can be found in the `sample` directory
 
 [Powered by Buffalo](http://gobuffalo.io)
